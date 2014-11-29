@@ -13,6 +13,7 @@ if ( ! function_exists( 'digistarter_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
+
 function digistarter_setup() {
 
 	/**
@@ -145,6 +146,14 @@ if ( !function_exists('digistarter_widgets_init') ) :
 			'before_title'  => '<h4 class="widget-title">',
 			'after_title'   => '</h4>',
 		) );
+		register_sidebar( array(
+			'name'          => __( 'Secondary Sidebar', 'digistarter' ),
+			'id'            => 'sidebar-2',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		) );
 	}
 	add_action( 'widgets_init', 'digistarter_widgets_init' );
 endif;
@@ -257,4 +266,7 @@ function digistarter_add_selectivizr() { ?>
   		<noscript><link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" /></noscript>
 	<![endif]-->
 <?php }
+
+define( 'JETPACK_DEV_DEBUG', true);
+
 
