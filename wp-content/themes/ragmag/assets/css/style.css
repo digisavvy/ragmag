@@ -1724,19 +1724,9 @@ ul.nav-menu li.current_page_item {
 }
 
 #primary-nav {
+  float: left;
   max-width: 100%;
-  margin: auto;
-}
-@media screen and (min-width: 960px) {
-  #primary-nav {
-    float: left;
-    display: block;
-    margin-right: 2.5641%;
-    width: 58.97436%;
-  }
-  #primary-nav:last-child {
-    margin-right: 0;
-  }
+  width: 100%;
 }
 
 .nav-links a:nth-of-type(2) {
