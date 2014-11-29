@@ -66,11 +66,9 @@ ul.nav-menu li.current_page_item {
 }
 
 #primary-nav {
-	@include media($mdbg) {
-		@include span-columns( 6 );
-	}
+	float: left;
 	max-width: 100%;
-	margin: auto;
+	width: 100%;
 }
 
 .nav-links a:nth-of-type(2) {
