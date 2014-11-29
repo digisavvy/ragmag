@@ -15,7 +15,7 @@ get_header();
 		'post_type'              => 'post',
 		'order'                  => 'ASC',
 		'orderby'                => 'menu_order',
-		'posts_per_page'				=> 6,
+		'posts_per_page'				=> 12,
 	);
 
 	$blog_posts = new WP_Query($args);
