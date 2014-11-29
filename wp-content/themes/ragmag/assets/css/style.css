@@ -38,6 +38,7 @@ and Blueprint http://www.blueprintcss.org/
 	6.5 - Sidebar
 	6.6 - Footer
 	6.7 - Accessbility
+	6.8 — Home Page Template
 
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -1010,86 +1011,169 @@ body {
   word-break: break-word;
 }
 
-#page {
-  max-width: 71.25em;
-  margin-left: auto;
-  margin-right: auto;
+.wrap {
+  background-color: #f3f3f3;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  float: left;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
-#page:after {
-  content: "";
-  display: table;
-  clear: both;
+@media screen and (min-width: 200px) {
+  .wrap {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 960px) {
+  .wrap {
+    float: left;
+    display: block;
+    margin-right: 2.5641%;
+    width: 79.48718%;
+  }
+  .wrap:last-child {
+    margin-right: 0;
+  }
 }
 
 #main {
   padding: 0 50px;
 }
 
-#primary {
-  margin: auto;
-  width: 100%;
-}
-#primary:after {
-  content: "";
-  display: table;
-  clear: both;
+#content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 @media screen and (min-width: 200px) {
-  #primary {
-    float: left;
-    display: block;
-    margin-right: 6.66667%;
+  #content {
     width: 100%;
   }
-  #primary:last-child {
-    margin-right: 0;
+}
+@media screen and (min-width: 600px) {
+  #content {
+    padding: 100px 50px;
   }
 }
-@media screen and (min-width: 768px) {
-  #primary {
+@media screen and (min-width: 200px) {
+  #content #primary {
     float: left;
     display: block;
-    margin-right: 4.34783%;
-    width: 65.21739%;
+    margin-right: 14.28571%;
+    width: 100%;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  #content #primary:last-child {
     margin-right: 0;
   }
-  #primary:last-child {
+  #content #primary:nth-child(n) {
     margin-right: 0;
   }
 }
-#primary ul {
+@media screen and (min-width: 960px) {
+  #content #primary {
+    float: left;
+    display: block;
+    margin-right: 2.5641%;
+    width: 53.84615%;
+    margin-left: 0%;
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  #content #primary:last-child {
+    margin-right: 0;
+  }
+}
+#content #primary ul {
   list-style: none;
 }
-#primary ul li {
+#content #primary ul li {
   list-style-type: square;
 }
-
-#secondary {
+#content #secondary {
   margin: 20px auto;
   padding: 0 30px 0 0;
   width: 100%;
 }
 @media screen and (min-width: 200px) {
-  #secondary {
+  #content #secondary {
     float: left;
     display: block;
-    margin-right: 6.66667%;
+    margin-right: 14.28571%;
     width: 100%;
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
     padding: 30px;
   }
-  #secondary:last-child {
+  #content #secondary:last-child {
     margin-right: 0;
   }
 }
-@media screen and (min-width: 768px) {
-  #secondary {
+@media screen and (min-width: 960px) {
+  #content #secondary {
     float: left;
     display: block;
-    margin-right: 4.34783%;
-    width: 30.43478%;
+    margin-right: 2.5641%;
+    width: 23.07692%;
+    -webkit-box-ordinal-group: 4;
+    -webkit-order: 3;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  #content #secondary:last-child {
     margin-right: 0;
   }
-  #secondary:last-child {
+  #content #secondary:nth-child(n) {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 200px) {
+  #content #tertiary {
+    float: left;
+    display: block;
+    margin-right: 14.28571%;
+    width: 100%;
+    -webkit-box-ordinal-group: 4;
+    -webkit-order: 3;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  #content #tertiary:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 960px) {
+  #content #tertiary {
+    float: left;
+    display: block;
+    margin-right: 2.5641%;
+    width: 23.07692%;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+    padding-right: 15px;
+  }
+  #content #tertiary:last-child {
     margin-right: 0;
   }
 }
@@ -1097,35 +1181,157 @@ body {
 /*--------------------------------------------------------------
 6.1 Layout and Structure
 --------------------------------------------------------------*/
-.site-branding {
+.branding {
+  display: -webkit-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  width: 100%;
+  background-color: #999;
+  float: left;
+}
+.branding .ad-banner {
+  width: 100%;
+  background-color: #333;
+  min-height: 80px;
+  -webkit-box-ordinal-group: 0;
+  -webkit-order: -1;
+      -ms-flex-order: -1;
+          order: -1;
+}
+.branding .right-branding, .branding .left-branding {
+  background-color: #ccc;
+}
+@media screen and (min-width: 200px) {
+  .branding .right-branding, .branding .left-branding {
+    float: left;
+    display: block;
+    margin-right: 14.28571%;
+    width: 100%;
+    -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+            align-self: auto;
+    min-height: 50px;
+  }
+  .branding .right-branding:last-child, .branding .left-branding:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 960px) {
+  .branding .right-branding, .branding .left-branding {
+    float: left;
+    display: block;
+    margin-right: 2.5641%;
+    width: 17.94872%;
+    -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+            align-self: stretch;
+    -webkit-box-ordinal-group: 0;
+    -webkit-order: -1;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+  .branding .right-branding:last-child, .branding .left-branding:last-child {
+    margin-right: 0;
+  }
+}
+.branding .right-branding:nth-child(n), .branding .left-branding:nth-child(n) {
+  margin-right: 0;
+}
+.branding .left-branding {
+  background-color: #dcdcdc;
+}
+@media screen and (min-width: 960px) {
+  .branding .left-branding {
+    float: left;
+    display: block;
+    margin-right: 2.5641%;
+    width: 17.94872%;
+    -webkit-flex-basis: 25.11%;
+        -ms-flex-preferred-size: 25.11%;
+            flex-basis: 25.11%;
+    -webkit-box-ordinal-group: 5;
+    -webkit-order: 4;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+  .branding .left-branding:last-child {
+    margin-right: 0;
+  }
+}
+.branding .site-branding {
+  background: #f3f3f3;
   text-align: center;
 }
-.site-branding .site-title {
+@media screen and (min-width: 200px) {
+  .branding .site-branding {
+    float: left;
+    display: block;
+    margin-right: 14.28571%;
+    width: 100%;
+    -webkit-box-ordinal-group: 0;
+    -webkit-order: -1;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+  .branding .site-branding:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 960px) {
+  .branding .site-branding {
+    float: left;
+    display: block;
+    margin-right: 2.5641%;
+    width: 56.92308%;
+    -webkit-box-ordinal-group: 4;
+    -webkit-order: 3;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .branding .site-branding:last-child {
+    margin-right: 0;
+  }
+}
+.branding .site-branding:nth-child(n) {
+  margin-right: 0;
+}
+.branding .site-branding .site-title {
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   padding: 40px;
 }
 @media screen and (min-width: 200px) {
-  .site-branding .site-title {
+  .branding .site-branding .site-title {
     font-size: 35px;
     font-size: 2.1875rem;
   }
 }
 @media screen and (min-width: 480px) {
-  .site-branding .site-title {
+  .branding .site-branding .site-title {
     font-size: 55px;
     font-size: 3.4375rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .site-branding .site-title {
+  .branding .site-branding .site-title {
     font-size: 75px;
     font-size: 4.6875rem;
   }
 }
-.site-branding .site-title a, .site-branding .site-title a:visited {
+.branding .site-branding .site-title a, .branding .site-branding .site-title a:visited {
   line-height: 1;
 }
-.site-branding .site-description {
+.branding .site-branding .site-description {
   padding: 25px 0;
   font-size: 20px;
   font-size: 1.25rem;
@@ -1133,19 +1339,19 @@ body {
   font-style: italic;
 }
 @media screen and (min-width: 200px) {
-  .site-branding .site-description {
+  .branding .site-branding .site-description {
     font-size: 15px;
     font-size: 0.9375rem;
   }
 }
 @media screen and (min-width: 480px) {
-  .site-branding .site-description {
+  .branding .site-branding .site-description {
     font-size: 18px;
     font-size: 1.125rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .site-branding .site-description {
+  .branding .site-branding .site-description {
     font-size: 25px;
     font-size: 1.5625rem;
   }
@@ -1705,8 +1911,8 @@ object {
   .page-template-page-templatestemplate-left-col-php #primary {
     float: left;
     display: block;
-    margin-right: 6.66667%;
-    width: 100%;
+    margin-right: 14.28571%;
+    width: 214.28571%;
   }
   .page-template-page-templatestemplate-left-col-php #primary:last-child {
     margin-right: 0;
@@ -1716,8 +1922,8 @@ object {
   .page-template-page-templatestemplate-left-col-php #primary {
     float: left;
     display: block;
-    margin-right: 4.34783%;
-    width: 65.21739%;
+    margin-right: 3.22581%;
+    width: 48.3871%;
   }
   .page-template-page-templatestemplate-left-col-php #primary:last-child {
     margin-right: 0;
@@ -1731,8 +1937,8 @@ object {
   .page-template-page-templatestemplate-left-col-php #secondary {
     float: left;
     display: block;
-    margin-right: 6.66667%;
-    width: 100%;
+    margin-right: 14.28571%;
+    width: 214.28571%;
   }
   .page-template-page-templatestemplate-left-col-php #secondary:last-child {
     margin-right: 0;
@@ -1742,8 +1948,8 @@ object {
   .page-template-page-templatestemplate-left-col-php #secondary {
     float: left;
     display: block;
-    margin-right: 4.34783%;
-    width: 30.43478%;
+    margin-right: 3.22581%;
+    width: 22.58065%;
   }
   .page-template-page-templatestemplate-left-col-php #secondary:last-child {
     margin-right: 0;
@@ -1767,8 +1973,8 @@ object {
   .page-template-page-templatestemplate-right-col-php #primary {
     float: left;
     display: block;
-    margin-right: 6.66667%;
-    width: 100%;
+    margin-right: 14.28571%;
+    width: 214.28571%;
   }
   .page-template-page-templatestemplate-right-col-php #primary:last-child {
     margin-right: 0;
@@ -1778,8 +1984,8 @@ object {
   .page-template-page-templatestemplate-right-col-php #primary {
     float: left;
     display: block;
-    margin-right: 4.34783%;
-    width: 65.21739%;
+    margin-right: 3.22581%;
+    width: 48.3871%;
   }
   .page-template-page-templatestemplate-right-col-php #primary:last-child {
     margin-right: 0;
@@ -1796,8 +2002,8 @@ object {
   .page-template-page-templatestemplate-right-col-php #secondary {
     float: left;
     display: block;
-    margin-right: 6.66667%;
-    width: 100%;
+    margin-right: 14.28571%;
+    width: 214.28571%;
   }
   .page-template-page-templatestemplate-right-col-php #secondary:last-child {
     margin-right: 0;
@@ -1807,8 +2013,8 @@ object {
   .page-template-page-templatestemplate-right-col-php #secondary {
     float: left;
     display: block;
-    margin-right: 4.34783%;
-    width: 30.43478%;
+    margin-right: 3.22581%;
+    width: 22.58065%;
   }
   .page-template-page-templatestemplate-right-col-php #secondary:last-child {
     margin-right: 0;
@@ -1918,4 +2124,52 @@ footer .footer-right:last-child {
   border-radius: 3px;
   -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
           box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+/*--------------------------------------------------------------
+6.8 Home Page Template
+--------------------------------------------------------------*/
+@media screen and (min-width: 200px) {
+  #primary article {
+    float: left;
+    display: block;
+    margin-right: 14.28571%;
+    width: 100%;
+    background-color: #ccc;
+    height: 250px;
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+  #primary article:last-child {
+    margin-right: 0;
+  }
+  #primary article:nth-child(n) {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 600px) {
+  #primary article {
+    float: left;
+    display: block;
+    margin-right: 4.34783%;
+    width: 45.21739%;
+    margin-left: 2.6087%;
+  }
+  #primary article:last-child {
+    margin-right: 0;
+  }
+  #primary article:nth-child(n) {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 960px) {
+  #primary article {
+    float: left;
+    display: block;
+    margin-right: 2.5641%;
+    width: 47.17949%;
+  }
+  #primary article:last-child {
+    margin-right: 0;
+  }
 }

@@ -38,6 +38,7 @@ and Blueprint http://www.blueprintcss.org/
 	6.5 - Sidebar
 	6.6 - Footer
 	6.7 - Accessbility
+	6.8 — Home Page Template
 
 --------------------------------------------------------------*/
 
@@ -114,3 +115,8 @@ and Blueprint http://www.blueprintcss.org/
 	6.7 Accessbility
 	--------------------------------------------------------------*/
 	@import "layouts/accessibility";
+
+	/*--------------------------------------------------------------
+	6.8 Home Page Template
+	--------------------------------------------------------------*/
+	@import "layouts/home-page-template";

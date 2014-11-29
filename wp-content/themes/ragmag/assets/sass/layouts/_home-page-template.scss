@@ -1,0 +1,22 @@
+#primary {
+	article {
+		@include media($sm) {
+			@include span-columns( 2 );
+			@include omega( n block );
+			background-color: #ccc;
+			height: 250px;
+			margin-bottom: 20px;
+			padding: 15px;
+		}
+		@include media($smd) {
+			@include span-columns( 2.85 );
+			@include omega( n block );
+			@include shift( .15 );
+
+		}
+		@include media($mdbg) {
+			@include span-columns( 4.85 );
+
+		}
+	}
+}

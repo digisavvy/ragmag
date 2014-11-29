@@ -1,40 +1,130 @@
-.site-branding {
-	text-align: center;
+.branding {
+	@include media($sm) {
 
-	.site-title {
-		font-family: $title;
-		padding: 40px;
+	}
+	@include media($smbg) {
+
+	}
+	@include media($smd) {
+
+	}
+	@include media($md) {
+
+	}
+	@include media($mdbg) {
+
+	}
+	@include display(flex);
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	@include fill-parent;
+	background-color: #999;
+	float:left;
+
+	.ad-banner {
+		@include fill-parent;
+		background-color: #333;
+		min-height: 80px;
+		order: -1;
+	}
+
+	.right-branding {
+		background-color: #ccc;
 
 		@include media($sm) {
-			@include fontSize(35px);
+			@include span-columns( 2 );
+			align-self: auto;
+			min-height: 50px;
 		}
 		@include media($smbg) {
-			@include fontSize(55px);
+		}
+		@include media($smd) {
+
 		}
 		@include media($md) {
-			@include fontSize(75px);
+
+		}
+		@include media($mdbg) {
+			@include span-columns( 2 );
+			align-self: stretch;
+			order: -1;
 		}
 
-		a,a:visited {
-			line-height: 1;
-		}
+		@include omega( n block );
 
 	}
 
-	.site-description {
-		padding: 25px 0;
-		@include fontSize(20px);
+	.left-branding {
+		@extend .right-branding;
+		background-color: #dcdcdc;
+		@include media($mdbg) {
+			@include span-columns( 2 );
+			flex-basis: 25.11%;
+			order: 4;
+		}
+	}
+
+	.site-branding {
+		background: #f3f3f3;
+		text-align: center;
 
 		@include media($sm) {
-			@include fontSize(15px);
+			@include span-columns( 2 );
+			order: -1;
 		}
 		@include media($smbg) {
-			@include fontSize(18px);
+		}
+		@include media($smd) {
+
 		}
 		@include media($md) {
-			@include fontSize(25px);
+
 		}
-		font-family: $content;
-		font-style: italic;
+		@include media($mdbg) {
+			@include span-columns( 5.8 );
+			order: 3;
+		}
+
+		@include omega( n block );
+
+		.site-title {
+			font-family: $title;
+			padding: 40px;
+
+			@include media($sm) {
+				@include fontSize(35px);
+			}
+			@include media($smbg) {
+				@include fontSize(55px);
+			}
+			@include media($md) {
+				@include fontSize(75px);
+
+			}
+
+			a,a:visited {
+				line-height: 1;
+			}
+
+		}
+
+		.site-description {
+			padding: 25px 0;
+			@include fontSize(20px);
+
+			@include media($sm) {
+				@include fontSize(15px);
+			}
+			@include media($smbg) {
+				@include fontSize(18px);
+			}
+			@include media($md) {
+				@include fontSize(25px);
+			}
+			font-family: $content;
+			font-style: italic;
+		}
 	}
+
 }
