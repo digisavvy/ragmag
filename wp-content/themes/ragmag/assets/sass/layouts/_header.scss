@@ -15,11 +15,10 @@
 
 	}
 	@include display(flex);
+	@include fill-parent;
+	border-bottom: dotted 3px #000;
 	flex-direction: row;
 	flex-wrap: wrap;
-
-	@include fill-parent;
-	background-color: #999;
 	float:left;
 
 	.ad-banner {
