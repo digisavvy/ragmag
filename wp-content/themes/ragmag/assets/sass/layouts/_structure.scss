@@ -37,7 +37,7 @@ body {
 		@include fill-parent;
 	}
 	@include media($smd) {
-		padding: 100px 50px;
+		padding: 100px 0;
 	}
 	#primary {
 		@include media($sm) {
@@ -90,9 +90,9 @@ body {
 
 		}
 		@include media($mdbg) {
-			@include span-columns( 2.5 );
+			@include span-columns( 2.40 );
 			order: 1;
-			padding-right: 15px;
+			padding: 0 15px 0 30px;
 		}
 	}
 }
