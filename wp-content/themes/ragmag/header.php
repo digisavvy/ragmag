@@ -31,14 +31,18 @@
 			<?php tha_header_top(); ?>
 			<div class="branding">
 				<div class="ad-banner"></div>
-				<div class="left-branding"></div><!-- .left-branding -->
+				<div class="left-branding">
+					<?php dynamic_sidebar( 'left-header' ); ?>
+				</div><!-- .left-branding -->
 
 				<div class="site-branding">
 					<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
 					<div class="site-description"><?php bloginfo( 'description' ) ?></div>
 				</div><!-- .site-branding -->
 
-				<div class="right-branding"></div><!-- .right-branding  -->
+				<div class="right-branding">
+					<?php dynamic_sidebar( 'right-header' ); ?>
+				</div><!-- .right-branding  -->
 			</div>
 
 

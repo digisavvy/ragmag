@@ -16,7 +16,7 @@
 	}
 	@include display(flex);
 	@include fill-parent;
-	border-bottom: dotted 3px #000;
+	border-bottom: dotted 2px #000;
 	flex-direction: row;
 	flex-wrap: wrap;
 	float:left;
@@ -30,7 +30,7 @@
 
 	.right-branding {
 		background-color: #ccc;
-
+		padding: 40px 15px;
 		@include media($sm) {
 			@include span-columns( 2 );
 			align-self: auto;
@@ -45,7 +45,7 @@
 
 		}
 		@include media($mdbg) {
-			@include span-columns( 2 );
+			@include span-columns( 2.4 );
 			align-self: stretch;
 			order: -1;
 		}
@@ -56,10 +56,12 @@
 
 	.left-branding {
 		@extend .right-branding;
-		background-color: #dcdcdc;
+		background-color: #fff;
+		border-left: solid 1px #ccc;
+
 		@include media($mdbg) {
-			@include span-columns( 2 );
-			flex-basis: 25.11%;
+			@include span-columns( 2.49 );
+
 			order: 4;
 		}
 	}
@@ -81,7 +83,7 @@
 
 		}
 		@include media($mdbg) {
-			@include span-columns( 5.8 );
+			@include span-columns( 5.6 );
 			order: 3;
 		}
 
@@ -125,5 +127,6 @@
 			font-style: italic;
 		}
 	}
+
 
 }

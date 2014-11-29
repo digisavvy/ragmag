@@ -50,6 +50,7 @@ function digistarter_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menu( 'primary-navigation', __( 'Primary Menu', 'digistarter' ) );
+	register_nav_menu( 'secondary-navigation', __( 'Secondary Menu', 'digistarter' ) );
 
 	// Enable support for Post Formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link', 'status', 'gallery', 'chat', 'audio' ) );
@@ -134,6 +135,13 @@ if ( !function_exists('digistarter_scripts') ) :
 endif; // Enqueue Scripts and Styles
 
 /**
+ * Update thumbnail default size.
+ */
+update_option( 'thumbnail_size_w', 600 );
+update_option( 'thumbnail_size_h', 600 );
+update_option( 'thumbnail_crop', 1 );
+
+/**
  * Register widgetized area and update sidebar with default widgets.
  */
 if ( !function_exists('digistarter_widgets_init') ) :
@@ -149,6 +157,22 @@ if ( !function_exists('digistarter_widgets_init') ) :
 		register_sidebar( array(
 			'name'          => __( 'Secondary Sidebar', 'digistarter' ),
 			'id'            => 'sidebar-2',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		) );
+		register_sidebar( array(
+			'name'          => __( 'Right Header Widget Area', 'digistarter' ),
+			'id'            => 'right-header',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		) );
+		register_sidebar( array(
+			'name'          => __( 'Left Header Widget Area', 'digistarter' ),
+			'id'            => 'left-header',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="widget-title">',

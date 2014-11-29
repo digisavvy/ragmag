@@ -1,7 +1,7 @@
 /* Flexnav Base Styles */
 
-$nav_text: #fff;
-$top_level: #000;
+$nav_text: #000;
+$top_level: #fff;
 $second_level: #333;
 $third_level: #666;
 $fourth_level: #999;
@@ -196,10 +196,7 @@ $fourth_level: #999;
 			width: 25%;
 		}
 		li a {
-			border-bottom: 1px solid #acaca1;
-			border-left: 1px solid #acaca1;
-			border-right: 1px solid #acaca1;
-			border-top: 1px solid #acaca1;
+
 		}
 		li > ul {
 			position: absolute;
