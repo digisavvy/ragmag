@@ -29,10 +29,18 @@
 		<?php tha_header_before(); ?>
 		<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 			<?php tha_header_top(); ?>
-			<div class="site-branding">
-				<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
-				<div class="site-description"><?php bloginfo( 'description' ) ?></div>
+			<div class="branding">
+				<div class="ad-banner"></div>
+				<div class="left-branding"></div><!-- .left-branding -->
+
+				<div class="site-branding">
+					<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
+					<div class="site-description"><?php bloginfo( 'description' ) ?></div>
+				</div><!-- .site-branding -->
+
+				<div class="right-branding"></div><!-- .right-branding  -->
 			</div>
+
 
 			<nav id="primary-nav" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 				<button class="menu-button">
