@@ -4,8 +4,8 @@
 	<?php
 	if ( has_post_thumbnail() ) {
 		$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
-		echo '<a href="' . $large_image_url[0] . '" title="' . the_title_attribute( 'echo=0' ) . '" >';
-		echo get_the_post_thumbnail( $post->ID, 'thumbnail' );
+		echo '<a href="' . get_permalink() . '" title="' . the_title_attribute( 'echo=0' ) . '" >';
+		echo get_the_post_thumbnail( $post->ID, 'homepage-thumb' );
 		echo '</a>';
 	}
 	?>

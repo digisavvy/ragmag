@@ -7,8 +7,18 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemType="http://schema.org/BlogPosting">
 	<?php tha_entry_top(); ?>
 	<header class="entry-header">
-		<h1 class="entry-title" itemprop="name" ><?php the_title(); ?></h1>
 
+		<h1 class="entry-title" itemprop="name" ><?php the_title(); ?></h1>
+			<?php
+				// Must be inside a loop.
+
+				if ( has_post_thumbnail() ) {
+					the_post_thumbnail('full');
+				}
+				else {
+					// echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/thumbnail-default.jpg" />';
+				}
+			?>
 		<div class="entry-meta">
 
 			<span class="genericon genericon-time"></span> <?php digistarter_posted_on(); ?>
