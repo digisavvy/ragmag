@@ -102,5 +102,10 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
+	<div id="secondary">
+		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	</div>
+	<div id="tertiary">
+		<?php dynamic_sidebar( 'sidebar-2' ); ?>
+	</div>
 <?php get_footer(); ?>
