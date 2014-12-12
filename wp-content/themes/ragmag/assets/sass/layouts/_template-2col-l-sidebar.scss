@@ -5,25 +5,46 @@
 		margin: 0;
 		text-align: left;
 	}
-	#primary {
-		float: right !important;
-		@include media($sm) {
-			@include span-columns(4);
+	#content {
+		display: flex;
+		flex-wrap: wrap;
+
+		#main {
+
 		}
-		@include media($md) {
-			@include span-columns(4);
+		#primary {
+			@include media($sm) {
+				@include span-columns(2);
+				@include omega( n block );
+				order: 1;
+			}
+			@include media($mdbg) {
+				@include span-columns(7);
+				order: 2;
+			}
+
+		}
+		#secondary {
+			@include media($sm) {
+				@include span-columns(2);
+				order: 2;
+			}
+			@include media($mdbg) {
+				@include span-columns(3);
+			}
+			border-left: none;
+			border-right: solid 1px #ccc;
+			margin-right: 1.5%;
+			order: 1;
+		}
+		#tertiary {
+			@include media($mdbg) {
+				@include span-columns(2);
+			}
+			order: 3;
 		}
 	}
-	#secondary {
-		float: left !important;
-		margin-right: 1.5%;
-		@include media($sm) {
-			@include span-columns(4);
-		}
-		@include media($md) {
-			@include span-columns(2);
-		}
-	}
+
 	footer {
 		clear: both;
 		display: table;

@@ -3,9 +3,10 @@
 	article.home {
 		@include media($sm) {
 			@include span-columns( 2 );
+			@include omega( n block );
+			// @include shift( .08 );
 			display: flex !important;
-			background-color: #ccc;
-			height: 250px;
+			height: auto;
 			margin-bottom: 20px;
 			position: relative;
 		}

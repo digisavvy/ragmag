@@ -16,7 +16,7 @@
 	}
 	@include display(flex);
 	@include fill-parent;
-	border-bottom: dotted 2px #000;
+	border-bottom: solid 1px #999;
 	flex-direction: row;
 	flex-wrap: wrap;
 	float:left;
@@ -30,7 +30,8 @@
 
 	.right-branding {
 		background-color: #ccc;
-		padding: 40px 15px;
+		padding: 40px 0;
+		position: relative;
 		@include media($sm) {
 			@include span-columns( 2 );
 			align-self: auto;
@@ -49,14 +50,19 @@
 			align-self: stretch;
 			order: -1;
 		}
-
 		@include omega( n block );
 
+		.block {
+			@include fill-parent;
+			bottom: 0;
+			height: 65px;
+			position: absolute;
+		}
 	}
 
 	.left-branding {
 		@extend .right-branding;
-		background-color: #fff;
+		background-color: #dfdfdf;
 		border-left: solid 1px #ccc;
 
 		@include media($mdbg) {
@@ -128,5 +134,10 @@
 		}
 	}
 
+	#primary-nav {
+		@include media($mdbg) {
+			order: 4;
+		}
+	}
 
 }

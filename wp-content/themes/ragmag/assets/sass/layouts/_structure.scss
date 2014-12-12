@@ -27,7 +27,13 @@ body {
 }
 
 #main {
-	padding: 0 50px;
+	@include media($sm) {
+		padding: 0 30px;
+	}
+	@include media($mdbg) {
+		padding: 0 50px;
+	}
+
 }
 #content {
 
