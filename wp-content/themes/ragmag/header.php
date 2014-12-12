@@ -33,29 +33,31 @@
 				<div class="ad-banner"></div>
 				<div class="left-branding">
 					<?php dynamic_sidebar( 'left-header' ); ?>
+					<div class="block"></div>
 				</div><!-- .left-branding -->
 
 				<div class="site-branding">
 					<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
 					<div class="site-description"><?php bloginfo( 'description' ) ?></div>
-
-					<nav id="primary-nav" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-						<button class="menu-button">
-							<span class="dashicons <?php echo get_theme_mod( 'digistarter_mobile_nav_icon', 'dashicons-menu' ); ?>"></span><?php echo get_theme_mod( 'digistarter_mobile_nav_label', 'Menu' ); ?>
-						</button>
-						<?php 	wp_nav_menu( array(
-							    'theme_location' => 'primary-navigation',
-							    'menu_class' => 'flexnav', //Adding the class for FlexNav
-							    'items_wrap' => '<ul data-breakpoint=" '. esc_attr( get_theme_mod( 'digistarter_mobile_min_width' ) ) .' " id="%1$s" class="%2$s">%3$s</ul>', // Adding data-breakpoint for FlexNav
-							    ));
-						?>
-
-					</nav><!-- #site-navigation -->
 				</div><!-- .site-branding -->
 
 				<div class="right-branding">
 					<?php dynamic_sidebar( 'right-header' ); ?>
+					<div class="block"></div>
 				</div><!-- .right-branding  -->
+
+				<nav id="primary-nav" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+					<button class="menu-button">
+						<span class="dashicons <?php echo get_theme_mod( 'digistarter_mobile_nav_icon', 'dashicons-menu' ); ?>"></span><?php echo get_theme_mod( 'digistarter_mobile_nav_label', 'Menu' ); ?>
+					</button>
+					<?php 	wp_nav_menu( array(
+						    'theme_location' => 'primary-navigation',
+						    'menu_class' => 'flexnav', //Adding the class for FlexNav
+						    'items_wrap' => '<ul data-breakpoint=" '. esc_attr( get_theme_mod( 'digistarter_mobile_min_width' ) ) .' " id="%1$s" class="%2$s">%3$s</ul>', // Adding data-breakpoint for FlexNav
+						    ));
+					?>
+
+				</nav><!-- #site-navigation -->
 			</div>
 
 
