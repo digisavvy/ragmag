@@ -141,6 +141,9 @@ update_option( 'thumbnail_size_w', 600 );
 update_option( 'thumbnail_size_h', 600 );
 update_option( 'thumbnail_crop', 1 );
 
+add_image_size( 'homepage-thumb', 500, 500, array( 'center', 'center' ) );
+
+
 /**
  * Register widgetized area and update sidebar with default widgets.
  */
@@ -153,6 +156,7 @@ if ( !function_exists('digistarter_widgets_init') ) :
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="widget-title">',
 			'after_title'   => '</h4>',
+			'description'   => __( 'Your Primary Sidebar', 'digistarter' ),
 		) );
 		register_sidebar( array(
 			'name'          => __( 'Secondary Sidebar', 'digistarter' ),
@@ -161,6 +165,16 @@ if ( !function_exists('digistarter_widgets_init') ) :
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="widget-title">',
 			'after_title'   => '</h4>',
+			'description'   => __( 'Your Secondary Sidebar', 'digistarter' ),
+		) );
+		register_sidebar( array(
+			'name'          => __( 'Top Widget Area', 'digistarter' ),
+			'id'            => 'top-widget-area',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+			'description'   => __( 'Top most widget area, above all other content', 'digistarter' ),
 		) );
 		register_sidebar( array(
 			'name'          => __( 'Right Header Widget Area', 'digistarter' ),
@@ -169,6 +183,7 @@ if ( !function_exists('digistarter_widgets_init') ) :
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="widget-title">',
 			'after_title'   => '</h4>',
+			'description'   => __( 'Right Widget Area', 'digistarter' ),
 		) );
 		register_sidebar( array(
 			'name'          => __( 'Left Header Widget Area', 'digistarter' ),
@@ -177,6 +192,7 @@ if ( !function_exists('digistarter_widgets_init') ) :
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="widget-title">',
 			'after_title'   => '</h4>',
+			'description'   => __( 'Left Widget Area', 'digistarter' ),
 		) );
 	}
 	add_action( 'widgets_init', 'digistarter_widgets_init' );
