@@ -1,5 +1,16 @@
 /* =Content
 ----------------------------------------------- */
+.dropdownwrap{
+	@include fill-parent;
+	height:auto;
+	float:left;
+	margin:0px;
+	background-color:#434343;
+	display:none;
+	padding: 20px 20px 0 20px;
+	order: -2;
+}
+
 .sticky {
 	background: #f1f1f1;
 }
