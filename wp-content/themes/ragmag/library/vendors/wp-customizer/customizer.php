@@ -189,7 +189,7 @@ $wp_customize->add_control(
 	)
 );
 
-// more shit
+// New Panel/Section/Setings and Controls
 $wp_customize->add_panel( 'panel_id', array(
 	    'priority' => 10,
 	    'capability' => 'edit_theme_options',
