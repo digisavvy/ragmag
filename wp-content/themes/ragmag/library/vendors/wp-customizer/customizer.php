@@ -189,6 +189,40 @@ $wp_customize->add_control(
 	)
 );
 
+// more shit
+$wp_customize->add_panel( 'panel_id', array(
+	    'priority' => 10,
+	    'capability' => 'edit_theme_options',
+	    'theme_supports' => '',
+	    'title' => __( 'Example Panel', 'textdomain' ),
+	    'description' => __( 'Description of what this panel does.', 'textdomain' ),
+	) );
+
+	$wp_customize->add_section( 'section_id', array(
+	    'priority' => 10,
+	    'capability' => 'edit_theme_options',
+	    'theme_supports' => '',
+	    'title' => __( 'Example Section', 'textdomain' ),
+	    'description' => '',
+	    'panel' => 'panel_id',
+	) );
+
+	$wp_customize->add_setting( 'url_field_id', array(
+		'default' => '',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'transport' => '',
+		'sanitize_callback' => 'esc_url',
+	) );
+
+	$wp_customize->add_control( 'url_field_id', array(
+	    'type' => 'url',
+	    'priority' => 10,
+	    'section' => 'section_id',
+	    'label' => __( 'URL Field', 'textdomain' ),
+	    'description' => '',
+	) );
+
 }
 add_action( 'customize_register', 'digistarter_add_customizer_theme_options' );
 
