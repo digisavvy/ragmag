@@ -30,7 +30,22 @@
 		<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 			<?php tha_header_top(); ?>
 			<div class="branding">
-				<div class="ad-banner"></div>
+				<div class="dropdownwrap">
+					<aside id="search-3" class="widget widget_search">
+						<form role="search" method="get" id="searchform" class="searchform" action="http://localhost:3000/">
+							<div>
+								<label class="screen-reader-text" for="s">Search for:</label>
+
+								<input type="text" placeholder="Type Search Term and Hit Enter" value="" name="s" id="s">
+								<!-- <input type="submit" id="searchsubmit" value="Search"> -->
+							</div>
+						</form>
+					</aside>
+					<?php dynamic_sidebar( 'slide-down' ); ?>
+				</div>
+				<div class="ad-banner">
+
+				</div>
 				<div class="left-branding">
 					<?php dynamic_sidebar( 'left-header' ); ?>
 					<div class="block"></div>
