@@ -194,6 +194,16 @@ if ( !function_exists('digistarter_widgets_init') ) :
 			'after_title'   => '</h4>',
 			'description'   => __( 'Left Widget Area', 'digistarter' ),
 		) );
+		register_sidebar( array(
+			'name'          => __( 'Slide Down Widget Area', 'digistarter' ),
+			'description'		=> __( 'A hidden widget area that is revealed by clicking a set button', 'digistarter' ),
+			'id'            => 'slide-down',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+			'description'   => __( 'Left Widget Area', 'digistarter' ),
+		) );
 	}
 	add_action( 'widgets_init', 'digistarter_widgets_init' );
 endif;
@@ -309,4 +319,22 @@ function digistarter_add_selectivizr() { ?>
 
 define( 'JETPACK_DEV_DEBUG', true);
 
+add_action( 'wp_head', 'digistarter_slidedown_search' );
+function digistarter_slidedown_search() { ?>
+	<script type="text/javascript">
+		jQuery(function ($) {
+			/* You can safely use $ in this code block to reference jQuery */
+			$(document).ready(function(e) {
+
+			    $('#menu-item-101').on('click',function(){
+
+					$('.dropdownwrap').slideToggle();
+
+				});
+
+			});
+
+		});
+	</script>
+<?php }
 
