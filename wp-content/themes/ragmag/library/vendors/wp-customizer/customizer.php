@@ -206,6 +206,14 @@ $wp_customize->add_panel( 'panel_id', array(
 	    'description' => '',
 	    'panel' => 'panel_id',
 	) );
+	$wp_customize->add_section( 'section_id_1', array(
+	    'priority' => 10,
+	    'capability' => 'edit_theme_options',
+	    'theme_supports' => '',
+	    'title' => __( 'Example Section 2', 'textdomain' ),
+	    'description' => '',
+	    'panel' => 'panel_id',
+	) );
 
 	$wp_customize->add_setting( 'url_field_id', array(
 		'default' => '',
@@ -219,6 +227,22 @@ $wp_customize->add_panel( 'panel_id', array(
 	    'type' => 'url',
 	    'priority' => 10,
 	    'section' => 'section_id',
+	    'label' => __( 'URL Field', 'textdomain' ),
+	    'description' => '',
+	) );
+
+	$wp_customize->add_setting( 'url_field_id_1', array(
+		'default' => '',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'transport' => '',
+		'sanitize_callback' => 'esc_url',
+	) );
+
+	$wp_customize->add_control( 'url_field_id_1', array(
+	    'type' => 'url',
+	    'priority' => 10,
+	    'section' => 'section_id_1',
 	    'label' => __( 'URL Field', 'textdomain' ),
 	    'description' => '',
 	) );
